@@ -6,20 +6,9 @@ abstract class Funcionario
     public $nome;
     public $salario;
    
-    public function setNome($nome){
+    public function __construct($nome, $salario){
         $this->nome = $nome;
-    }
-
-    public function getNome(){
-        return $this->nome;
-    }
-
-    public function setSalario($salario){
         $this->salario = $salario;
-    }
-
-    public function getSalario(){
-        return $this->salario;
     }
 
     public function geraBonificacao(){
@@ -45,12 +34,8 @@ class Secretaria extends Funcionario
     }
 }
 
-$gerente= new Gerente();
-$gerente->setNome("Luma");
-$gerente->setSalario(500);
+$gerente= new Gerente("Luma", 500);
 
-$secretaria= new Secretaria();
-$secretaria->setNome("Luma K");
-$secretaria->setSalario(400);
+$secretaria= new Secretaria("Luma M", 400);
 
 ?>
